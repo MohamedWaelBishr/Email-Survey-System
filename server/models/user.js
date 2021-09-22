@@ -1,8 +1,11 @@
-const mongoose=require('mongoose');
+const mongoose = require("mongoose")
+const {Schema } = mongoose
 
-const user=mongoose.Schema({
-    google_id:{ type:String, required:true},
-    credit:{type:Number,default:0}
-})
+const User = new Schema(
+    {
+        googleID:String,
+        credits:{ type: Number, default: 0 }
+    }
+)
 
-module.exports=mongoose.model('user',user);
+module.exports = mongoose.model('User',User)
