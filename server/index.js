@@ -12,7 +12,7 @@ const ConnectDB = require("./DBconnect")
 
 ////google oauth///
 
-require('./service/passport')
+require('./Service/Passport')
 ConnectDB()
 const app = express()
 app.use(
