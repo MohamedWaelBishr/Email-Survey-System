@@ -1,13 +1,14 @@
 //dependencies
+const dotenv = require('dotenv')
+dotenv.config({path:__dirname+'/.env'});
 const express =require('express')
 const app = express()
-const keys = require('./config/keys')
 const mongoose = require("mongoose")
 const user = require("./models/User")
 const survey = require("./models/Survey")
+const ConnectDB = require("./DBconnect")
 
-mongoose.connect(keys.mongoURI).then(console.log("Successfully Connected to MongoDB"))
-
+ConnectDB()
 
 //app methods
 app.get("/",(req,res)=>{
@@ -20,6 +21,3 @@ const PORT= 5000
 app.listen(5000,()=>{
     "Successfully Started The Server Side On Port 5000",PORT
 })
-
-
-//Mk6cSwwKpHLhxFvf
