@@ -1,0 +1,11 @@
+const mongoose=require('mongoose');
+
+const survey=mongoose.Schema({
+    title:{ type:String, required:true},
+    body:{type:String,required:true},
+    subject:{type:String,required:true},
+    date:{ type:Date,required:true},
+    checkIn:{ type:Date},
+    checkOut:{type:Date}
+})
+module.exports=mongoose.model('survey',survey);
