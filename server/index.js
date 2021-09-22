@@ -4,8 +4,8 @@ dotenv.config({path:__dirname+'/.env'});
 const express =require('express')
 const app = express()
 const mongoose = require("mongoose")
-const user = require("./models/User")
-const survey = require("./models/Survey")
+const user = require("./Models/User")
+const survey = require("./Models/Survey")
 const ConnectDB = require("./DBconnect")
 
 ConnectDB()
@@ -15,9 +15,12 @@ app.get("/",(req,res)=>{
     res.send({msg: "Hello World!"})
 })
 
-//server port
-const PORT= 5000
 
-app.listen(5000,()=>{
-    "Successfully Started The Server Side On Port 5000",PORT
+require('./Routes/SurveyRoute')(app);
+
+//server port
+const PORT= process.env.PORT
+
+app.listen(PORT,()=>{
+    `Successfully Started The Server Side On Port ${PORT}`,PORT
 })
