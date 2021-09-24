@@ -43,11 +43,7 @@ class Header extends Component {
             Email Survey System
           </Link>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li>
-              <a href="/" className="deep-orange darken-1">
-                {this.renderContent()}
-              </a>
-            </li>
+            {this.renderContent()}
           </ul>
         </div>
       </nav>
