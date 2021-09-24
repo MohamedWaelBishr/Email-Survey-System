@@ -17,6 +17,7 @@
     "cookie-session": "^1.4.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+<<<<<<< Updated upstream
     "mongodb": "^4.1.2",
     "mongoose": "^6.0.7",
     "nodemon": "^2.0.12",
@@ -25,5 +26,9 @@
     "react-stripe-checkout": "^2.6.3",
     "sendgrid": "^5.2.3",
     "stripe": "^8.176.0"
+=======
+    "mongoose": "^6.0.7",
+    "nodemon": "^2.0.12"
+>>>>>>> Stashed changes
   }
 }

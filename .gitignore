@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
 .env
 server/node_modules
 server/config/keys.js
+=======
+node_modules
+>>>>>>> Stashed changes
