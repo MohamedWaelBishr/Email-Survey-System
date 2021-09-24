@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 dotenv.config({ path: __dirname + "/.env" });
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser=require('body-parser')
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 const user = require("./Models/User");
@@ -14,6 +15,7 @@ const ConnectDB = require("./DBconnect");
 require("./Service/Passport");
 ConnectDB();
 const app = express();
+app.use(bodyParser.json())
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -24,7 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.json());
 require("./Routes/authRoute")(app);
-
+require("./Routes/billingRoute")(app);
 //app methods
 app.get("/", (req, res) => {
   res.send({ msg: "Hello World!" });
