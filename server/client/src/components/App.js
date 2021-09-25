@@ -17,14 +17,11 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <div
-            className="container deep-purple lighten-5"
-            style={{ height: "100vh" }}
-          >
+          <div className="  deep-purple lighten-5">
             <Header />
             <Route exact path="/" component={Landing} />
-            <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
+            <Route exact path="/surveys" component={Dashboard} />
           </div>
         </BrowserRouter>
       </div>

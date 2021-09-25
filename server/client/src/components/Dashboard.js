@@ -1,12 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import SurveyList from "./surveys/SurveyList";
 
 const Dashboard = () => {
   return (
     <div>
-      <h1>Dashboard Component</h1>
+      <SurveyList />
       <div className="fixed-action-btn">
-        <Link to="/surveys/new" className="btn-floating btn-large red">
+        <Link to="/surveys/new" className="btn-floating btn-large purple">
           <i className="material-icons">add</i>
         </Link>
       </div>
@@ -15,4 +16,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
