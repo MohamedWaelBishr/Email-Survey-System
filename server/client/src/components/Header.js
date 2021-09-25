@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Payments from './Payments';
+import Payments from "./Payments";
 
 class Header extends Component {
   renderContent() {
@@ -10,10 +10,10 @@ class Header extends Component {
         return;
       case false:
         return (
-          <li className="purple lighten-5">
+          <li className="orange darken-4">
             <a
               href="/auth/google"
-              style={{ color: "#e64a19", fontWeight: "bold" }}
+              style={{ color: "white", fontWeight: "bold" }}
             >
               Sign In With Google
             </a>
@@ -21,15 +21,21 @@ class Header extends Component {
         );
       default:
         return [
-          <li key="1"><Payments /></li>,
-          <li key="2" style={{ margin:'0 10px'}}>
-             Credits:{this.props.auth.credits}
+          <li key="1" style={{ marginRight: "5px" }}>
+            <Payments />
+          </li>,
+          <li key="2" style={{ margin: "0 10px", fontWeight: "bold" }}>
+            Credits :{this.props.auth.credits}
           </li>,
           <li key="3">
-            <a href="/api/logout" className="pink darken-1">
+            <a
+              href="/api/logout"
+              className="pink darken-1"
+              style={{ fontWeight: "bold" }}
+            >
               Sign Out
             </a>
-          </li>
+          </li>,
         ];
     }
   }
