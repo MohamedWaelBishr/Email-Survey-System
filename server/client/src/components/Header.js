@@ -21,11 +21,20 @@ class Header extends Component {
         );
       default:
         return [
-          <li key="1" style={{ marginRight: "5px" }}>
+          <li key="0" style={{ marginRight: "5px" }}>
             <Payments />
           </li>,
-          <li key="2" style={{ margin: "0 10px", fontWeight: "bold" }}>
+          <li key="1" style={{ margin: "0 10px", fontWeight: "bold" }}>
             Credits :{this.props.auth.credits}
+          </li>,
+          <li key="2">
+            <Link
+              to={this.props.auth ? "/surveys" : "/"}
+              href="/"
+              style={{ marginLeft: "10px", fontWeight: "bold" }}
+            >
+              Dashboard
+            </Link>
           </li>,
           <li key="3">
             <a
@@ -45,14 +54,10 @@ class Header extends Component {
     return (
       <nav>
         <div className="nav-wrapper purple darken-3">
-          <Link
-            to={this.props.auth ? "/surveys" : "/"}
-            href="/"
-            className="brand-logo "
-            style={{ marginLeft: "10px" }}
-          >
-            Email Survey System
+          <Link to="/" className="btn-floating btn-large purple">
+            <i className="material-icons">email</i>
           </Link>
+
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             {this.renderContent()}
           </ul>
